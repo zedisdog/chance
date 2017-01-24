@@ -14,22 +14,14 @@ namespace zedisdog\ChanceLib;
  */
 class Chance
 {
-    protected $proArr;
-
-    public function __construct($proArr)
-    {
-        $this->$proArr = $proArr;
-    }
-
-
-    public function getRand() {
+    public function getRand($proArr) {
         $result = '';
 
         //概率数组的总概率精度
-        $proSum = array_sum($this->proArr);
+        $proSum = array_sum($proArr);
 
         //概率数组循环
-        foreach ($this->proArr as $key => $proCur) {
+        foreach ($proArr as $key => $proCur) {
             $randNum = mt_rand(1, $proSum);
             if ($randNum <= $proCur) {
                 $result = $key;
@@ -38,7 +30,7 @@ class Chance
                 $proSum -= $proCur;
             }
         }
-        unset ($this->proArr);
+        unset ($proArr);
 
         return $result;
     }
