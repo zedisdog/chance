@@ -1,0 +1,17 @@
+{
+    "name": "zedisdog/chance",
+    "description": "Probability draw",
+    "type": "library",
+    "authors": [
+        {
+            "name": "zed",
+            "email": "zedsmail@163.com"
+        }
+    ],
+    "require": {},
+    "autoload" : {
+        "psr-4" : {
+            "zedisdog\\ChanceLib" : "src/"
+        }
+    }
+}
